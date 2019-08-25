@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package Services.Messages;
+
+service GrpcMessageService {
+    rpc GetMessage (GetMessageRequest) returns (GetMessageResponse) {}
+    rpc GetMessagesStream (GetMessageRequest) returns (stream GetMessageResponse) {}
+}
+
+message GetMessageRequest {
+    string id = 1;
+}
+
+message GetMessageResponse {
+    string id = 1;
+    int32 value1 = 2;
+    double value2 = 3;
+}
